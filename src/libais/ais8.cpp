@@ -595,7 +595,7 @@ Ais8_1_31::Ais8_1_31(const char *nmea_payload, const size_t pad)
   air_temp = bits.ToInt(154, 11) / 10.;  // C
   rel_humid = bits.ToUnsignedInt(165, 7);
   dew_point = bits.ToInt(172, 10)/ 10.;  // TODO(schwehr): How is this mapped?
-  air_pres = (bits.ToUnsignedInt(182, 9) + 800) / 100.0;  // Pa
+  air_pres = (bits.ToUnsignedInt(182, 9) + 800);  // hPa
   air_pres_trend = bits.ToUnsignedInt(191, 2);
 
   horz_vis = bits.ToUnsignedInt(193, 8) / 10.;  // NM
